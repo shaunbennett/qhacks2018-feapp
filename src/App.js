@@ -14,6 +14,7 @@ import {
 
 import SignupForm from './auth/SignupForm';
 import LoginForm from './auth/LoginForm';
+import Browse from './Browse';
 
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
@@ -66,6 +67,7 @@ class App extends Component {
           </Menu>
 
           <SignupForm />
+          <Browse />
           {/* <LoginForm /> */}
 
           {/* <Container text style={{ marginTop: "7em" }}>

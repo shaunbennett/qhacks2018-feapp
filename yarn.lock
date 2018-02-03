@@ -5676,6 +5676,10 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
+react-facebook-login@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-facebook-login/-/react-facebook-login-4.0.0.tgz#f2384dd36d197a9ce6decc2f3189bc9e4ccac57d"
+
 react-firebaseui@^1.0.10:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/react-firebaseui/-/react-firebaseui-1.0.10.tgz#68876d1b33fc2ec05a2000ed975bf94a24a57d84"
