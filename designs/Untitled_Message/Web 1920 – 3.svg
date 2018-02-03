@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="defer none" viewBox="0 0 1920 1080">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 1169 1920 1080">
   <defs>
     <style>
       .cls-1 {
-        clip-path: url(#clip-Web_1920_1);
+        clip-path: url(#clip-Web_1920_3);
       }
 
-      .cls-2, .cls-3, .cls-4, .cls-5, .cls-8 {
+      .cls-11, .cls-12, .cls-2, .cls-3, .cls-4, .cls-5, .cls-8, .cls-9 {
         fill: #fff;
       }
 
@@ -13,7 +13,7 @@
         stroke: #efdcdc;
       }
 
-      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-9 {
         stroke-width: 3px;
       }
 
@@ -29,7 +29,7 @@
         stroke: #f5eaea;
       }
 
-      .cls-6, .cls-7 {
+      .cls-14, .cls-6, .cls-7 {
         fill: none;
       }
 
@@ -37,27 +37,59 @@
         stroke: #f2e3e3;
       }
 
+      .cls-11, .cls-8 {
+        stroke: #f4d9ff;
+      }
+
+      .cls-11, .cls-12, .cls-8 {
+        font-size: 30px;
+      }
+
       .cls-8 {
-        stroke: #e3baf1;
-        font-size: 20px;
-        font-family: LucidaBright, Lucida Bright;
+        font-family: TrebuchetMS-Bold, Trebuchet MS;
+        font-weight: 700;
       }
 
       .cls-9 {
+        stroke: #ffdbdb;
+      }
+
+      .cls-10 {
+        fill: #bcd7ff;
+      }
+
+      .cls-11, .cls-12 {
+        font-family: TrebuchetMS, Trebuchet MS;
+      }
+
+      .cls-12 {
+        stroke: #fff;
+      }
+
+      .cls-13, .cls-15 {
+        stroke: none;
+      }
+
+      .cls-15 {
+        fill: #707070;
+      }
+
+      .cls-16 {
         fill: url(#linear-gradient);
       }
     </style>
     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#e308f3"/>
-      <stop offset="1" stop-color="#1c136e"/>
+      <stop offset="0" stop-color="#cafbe8"/>
+      <stop offset="1" stop-color="#5b46c9"/>
+      <stop offset="1" stop-color="#a8fedc"/>
     </linearGradient>
-    <clipPath id="clip-Web_1920_1">
-      <rect width="1920" height="1080"/>
+    <clipPath id="clip-Web_1920_3">
+      <rect y="1169" width="1920" height="1080"/>
     </clipPath>
   </defs>
-  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
-    <rect class="cls-9" width="1920" height="1080"/>
-    <g id="Group_3" data-name="Group 3" transform="translate(3 -1)">
+  <g id="Web_1920_3" data-name="Web 1920 – 3" class="cls-1">
+    <rect class="cls-16" y="1169" width="1920" height="1080"/>
+    <g id="Group_5" data-name="Group 5" transform="translate(1919.5 2249.5) rotate(180)">
       <g id="Group_1" data-name="Group 1">
         <path id="Path_1" data-name="Path 1" class="cls-2" d="M0,899c14.174-18.65,28.334-26.636,35.5-42.5,1-2.211-6.035-17.349-5-19.649,9.925-21.964,16-35.351,16-35.351L116,831l35,68,80,54V793l33-64,76-49,17,98,27,53L487,941l73-187,20-38,93-84L849,810l36,108,109-87h89l56-131,59,78,51,121,87-170,162-112,68,99,40,155,20-40,66-53,44,69,42,139,40-87,42-28,30,47,33,68v90H0Z" transform="translate(0 4)"/>
         <path id="Path_2" data-name="Path 2" class="cls-3" d="M121,759l75.947,85.533L224,875v79l-82-56-32-66Z" transform="translate(-28 -91)"/>
@@ -154,6 +186,31 @@
         <line id="Line_42-2" data-name="Line 42" class="cls-6" x2="77" y2="53" transform="translate(230.5 797.5)"/>
       </g>
     </g>
-    <text id="_" data-name="      " class="cls-8" transform="translate(1527 422)"><tspan x="-18.252" y="0" xml:space="preserve">      </tspan></text>
+    <text id="SIGN_UP" data-name="SIGN UP" class="cls-8" transform="translate(700 1670)"><tspan x="0" y="0">SIGN UP</tspan></text>
+    <g id="Rectangle_2" data-name="Rectangle 2" class="cls-9" transform="translate(891 1700)">
+      <rect class="cls-13" width="364" height="45" rx="8"/>
+      <rect class="cls-14" x="1.5" y="1.5" width="361" height="42" rx="6.5"/>
+    </g>
+    <g id="Rectangle_3" data-name="Rectangle 3" class="cls-9" transform="translate(891 1804)">
+      <rect class="cls-13" width="364" height="45" rx="8"/>
+      <rect class="cls-14" x="1.5" y="1.5" width="361" height="42" rx="6.5"/>
+    </g>
+    <g id="Rectangle_4" data-name="Rectangle 4" class="cls-9" transform="translate(891 1868)">
+      <rect class="cls-13" width="364" height="45" rx="8"/>
+      <rect class="cls-14" x="1.5" y="1.5" width="361" height="42" rx="6.5"/>
+    </g>
+    <g id="Rectangle_5" data-name="Rectangle 5" class="cls-9" transform="translate(891 1972)">
+      <rect class="cls-13" width="364" height="45" rx="8"/>
+      <rect class="cls-14" x="1.5" y="1.5" width="361" height="42" rx="6.5"/>
+    </g>
+    <g id="Path_7" data-name="Path 7" class="cls-10" transform="translate(891 2076)">
+      <path class="cls-13" d="M 156 49.5 L 8 49.5 C 3.864479064941406 49.5 0.5 46.13552093505859 0.5 42 L 0.5 8 C 0.5 3.864479064941406 3.864479064941406 0.5 8 0.5 L 156 0.5 C 160.1355133056641 0.5 163.5 3.864479064941406 163.5 8 L 163.5 42 C 163.5 46.13552093505859 160.1355133056641 49.5 156 49.5 Z"/>
+      <path class="cls-15" d="M 156 49 C 159.8598175048828 49 163 45.85981369018555 163 42 L 163 8 C 163 4.14018726348877 159.8598175048828 1 156 1 L 8 1 C 4.14018726348877 1 1 4.14018726348877 1 8 L 1 42 C 1 45.85981369018555 4.14018726348877 49 8 49 L 156 49 M 156 50 L 8 50 C 3.581729173660278 50 1.4210854715202e-14 46.41827011108398 1.4210854715202e-14 42 L 1.4210854715202e-14 8 C 1.4210854715202e-14 3.581729173660278 3.581729173660278 3.552713678800501e-15 8 3.552713678800501e-15 L 156 3.552713678800501e-15 C 160.4182739257813 3.552713678800501e-15 164 3.581729173660278 164 8 L 164 42 C 164 46.41827011108398 160.4182739257813 50 156 50 Z"/>
+    </g>
+    <text id="password:" class="cls-11" transform="translate(668 1837)"><tspan x="0" y="0">password:</tspan></text>
+    <text id="confirm_password:" data-name="confirm password:" class="cls-11" transform="translate(560 1904)"><tspan x="0" y="0">confirm password:</tspan></text>
+    <text id="university:" class="cls-11" transform="translate(665 2004)"><tspan x="0" y="0">university:</tspan></text>
+    <text id="ID:" class="cls-11" transform="translate(765 1737)"><tspan x="0" y="0">ID:</tspan></text>
+    <text id="done" class="cls-12" transform="translate(941 2111)"><tspan x="0" y="0">done</tspan></text>
   </g>
 </svg>

@@ -4,7 +4,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import App from './App';
-import Header from './components/layout/Header';
+import LandingPage from './components/pages/LandingPage/LandingPage';
+import Header from './components/layout/Header/Header';
 
 const Status = function({ code, children }) {
   return (
@@ -32,7 +33,7 @@ const routes = (
   <App>
     <Header />
     <Switch>
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={LandingPage} />
       <Route component={NotFound} />
     </Switch>
   </App>
