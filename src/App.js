@@ -12,7 +12,7 @@ import {
   Segment
 } from 'semantic-ui-react';
 
-import Signup from './auth/Signup';
+import Signup from './auth/SignupForm';
 import LoginForm from './auth/LoginForm';
 
 import './App.css';
