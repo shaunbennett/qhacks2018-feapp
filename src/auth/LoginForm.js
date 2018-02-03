@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Button,
   Form,
@@ -7,7 +7,7 @@ import {
   Image,
   Message,
   Segment
-} from "semantic-ui-react";
+} from 'semantic-ui-react';
 
 export default class LoginForm extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ export default class LoginForm extends Component {
     `}</style>
         <Grid
           textAlign="center"
-          style={{ height: "100%" }}
+          style={{ height: '100%' }}
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>

@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { auth } from "../firebase/firebase";
+import React, { Component } from 'react';
+import { auth } from '../firebase/firebase';
 
 export default class Signup extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
-      email: "",
-      password: ""
+      username: '',
+      email: '',
+      password: ''
     };
   }
 

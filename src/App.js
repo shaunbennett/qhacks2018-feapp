@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
   Container,
   Divider,
@@ -10,13 +10,13 @@ import {
   List,
   Menu,
   Segment
-} from "semantic-ui-react";
+} from 'semantic-ui-react';
 
-import Signup from "./auth/Signup";
-import LoginForm from "./auth/LoginForm";
+import Signup from './auth/Signup';
+import LoginForm from './auth/LoginForm';
 
-import "./App.css";
-import "semantic-ui-css/semantic.min.css";
+import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
   render() {
