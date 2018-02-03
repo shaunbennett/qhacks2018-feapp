@@ -19,14 +19,15 @@ export default class LoginForm extends Component {
   render() {
     return (
       <div className="login-form">
-    <style>{`
+        <style>
+          {`
         body > div,
         body > div > div,
         body > div > div > div.login-form {
           height: 100%;
         }
       `}
-    </style>
+        </style>
         <Grid
           textAlign="center"
           style={{ height: '100%' }}
@@ -37,7 +38,7 @@ export default class LoginForm extends Component {
               Login to QCourses
             </Header>
             <Form size="large">
-                <FacebookLoginButton/>
+              <FacebookLoginButton />
             </Form>
             <Message>
               New user? <a href="#">Sign Up</a>
