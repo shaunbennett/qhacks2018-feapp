@@ -12,7 +12,7 @@ import {
   Segment
 } from 'semantic-ui-react';
 
-import Signup from './auth/Signup';
+import SignupForm from './auth/SignupForm';
 import LoginForm from './auth/LoginForm';
 
 import './App.css';
@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Menu fixed="top" inverted>
+          <Menu fixed="top" inverted borderless>
             <Container>
               <Menu.Item as={Link} to="/" header>
                 Queen Courses
@@ -49,10 +49,24 @@ class App extends Component {
                   <Dropdown.Item>List Item</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
+              <Menu.Menu position="right">
+                <Menu.Item as={Link} to="/">
+                  Queens University
+                </Menu.Item>
+                <Menu.Item as={Link} to="/profile">
+                  <Image
+                    size="mini"
+                    src="https://scontent.xx.fbcdn.net/v/t1.0-1/c3.0.100.100/p100x100/21192751_10209152960133468_7841702014029734163_n.jpg?oh=368746f8b29b2f2f7f075bfdec5d7b16&oe=5ADFED6D"
+                    style={{ marginRight: '1.5em' }}
+                  />
+                  Shaun Bennett
+                </Menu.Item>
+              </Menu.Menu>
             </Container>
           </Menu>
 
-          <LoginForm />
+          <SignupForm />
+          {/* <LoginForm /> */}
 
           {/* <Container text style={{ marginTop: "7em" }}>
           <Header as="h1">Queen Courses</Header>
