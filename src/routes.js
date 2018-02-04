@@ -7,6 +7,8 @@ import Header from './components/layout/Header/Header';
 import LoginPage from './components/pages/LoginPage/LoginPage';
 import CoursePage from './components/pages/CoursePage/CoursePage';
 import CoursesPage from './components/pages/CoursesPage';
+import Profile from './components/pages/Profile/Profile';
+import Opportunities from './components/pages/Opportunities/Opportunities';
 
 const Status = function({ code, children }) {
   return (
@@ -37,6 +39,8 @@ const routes = (
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/course" component={CoursePage} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/opportunities" component={Opportunities} />
       <Route path="/courses/:course" component={CoursePage} />
       <Route path="/courses" component={CoursesPage} />
       <Route component={NotFound} />

@@ -69,12 +69,15 @@ class Header extends Component {
     const { auth } = this.props;
     return (
       <div className={styles.wrapper}>
-        {auth.authenticated && (
+        {auth.authenticated && [
+          <Link className={styles.myAccount} to="/profile">
+            My Account
+          </Link>,
           <a href="" onClick={e => this.logout(e)}>
             <Image src={auth.user.photoURL} avatar />
             {auth.user.displayName}
           </a>
-        )}
+        ]}
         {!auth.authenticated && (
           <a href="/login" onClick={e => this.toggleModal(e)}>
             Sign In / Register

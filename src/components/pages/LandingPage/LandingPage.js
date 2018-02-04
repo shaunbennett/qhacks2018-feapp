@@ -43,7 +43,7 @@ class LandingPage extends Component {
           />
           <div className={styles.links}>
             <Link to="/courses">Explore Courses</Link>
-            <Link to="/">Job Opportunities</Link>
+            <Link to="/opportunities">Job Opportunities</Link>
           </div>
         </div>
       </div>
