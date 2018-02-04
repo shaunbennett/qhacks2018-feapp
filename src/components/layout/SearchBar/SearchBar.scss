@@ -1,0 +1,15 @@
+.wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    input, input:focus{
+        border-left: none;
+    }
+    width: 350px;
+    @media screen and (max-width: 480px){
+        width: 300px;
+    }
+}
+.addon{
+    background-color: white;
+    // border: none;
+}
