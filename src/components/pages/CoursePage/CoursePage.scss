@@ -1,0 +1,64 @@
+$side-padding: 30px;
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    font-family: 'TrebuchetMS-Bold, Trebuchet MS'
+}
+
+.info{
+    position: fixed;
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: #bfd8fd;
+}
+
+.infoText{
+    padding-top: 20px;
+    font-family: 'TrebuchetMS-Bold, Trebuchet MS';
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.code{
+    font-size: 80px;
+    font-weight: 700;
+}
+.title {
+    font-size: 30px;
+    font-weight: 700;
+}
+.description{
+    font-size: 20px;
+}
+
+.reviewsWrapper{
+    padding-left: calc(50% + #{$side-padding});
+    padding-right: $side-padding;
+    flex: 1;
+    padding-top: 40px;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+}
+
+.graphs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    margin-top: 40px;
+}
+
+.sectionTitle{
+    color: #314feb;
+    font-size: 20px;
+    font-weight: 700;
+}

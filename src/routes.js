@@ -5,6 +5,7 @@ import App from './App';
 import LandingPage from './components/pages/LandingPage/LandingPage';
 import Header from './components/layout/Header/Header';
 import LoginPage from './components/pages/LoginPage/LoginPage';
+import CoursePage from './components/pages/CoursePage/CoursePage';
 import CoursesPage from './components/pages/CoursesPage';
 
 const Status = function({ code, children }) {
@@ -35,6 +36,7 @@ const routes = (
     <Switch>
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/course" component={CoursePage} />
       <Route path="/courses" component={CoursesPage} />
       <Route path="/courses/:course" component={NotFound} />
       <Route component={NotFound} />
