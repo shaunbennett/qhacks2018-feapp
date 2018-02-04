@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
-import { firebase } from './firebase/firebase';
+import { firebase } from '../../../firebase/firebase';
 import {
   Container,
   List,
@@ -14,13 +14,16 @@ import {
   Loader,
   Segment
 } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+
+import { searchCourse } from '../../../actions/courseActions';
 
 function getRandomInt(min, max) {
   return Math.floor(min + Math.random() * Math.floor(max - min));
 }
 
 function Score({ scoreValue }) {
-  let color = '';
+  let color = 'black';
   if (scoreValue > 80) color = 'green';
   else if (scoreValue <= 50) color = 'red';
 
@@ -47,13 +50,31 @@ function courseScoreComparator(courseA, courseB) {
   return courseB.score - courseA.score;
 }
 
-class Browse extends Component {
+const mapStateToProps = state => {
+  return {
+    courseSearchString: state.course.courseSearchString
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    searchCourses: searchText => {
+      dispatch(searchCourse(searchText));
+    }
+  };
+};
+
+class CoursesPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { spinning: false, searchText: '', courses: {} };
+    this.state = {
+      spinning: true,
+      courses: {},
+      searchFieldString: props.courseSearchString
+    };
 
     this.searchHandler = this.createSpinningDebouncer(value => {
-      this.setState({ searchText: value });
+      props.searchCourses(value);
     }, 200).bind(this);
   }
 
@@ -67,7 +88,7 @@ class Browse extends Component {
           return { ...c, score: getRandomInt(10, 99) };
         });
 
-        this.setState({ courses });
+        this.setState({ courses, spinning: false });
       });
   }
 
@@ -84,19 +105,22 @@ class Browse extends Component {
   }
 
   getFilteredCourses() {
-    const { searchText, courses } = this.state;
+    const { courseSearchString } = this.props;
+    const { courses } = this.state;
     return _.chain(courses)
-      .filter(c => courseMatches(searchText, c))
+      .filter(c => c.title !== '') // remove courses with empty titles
+      .filter(c => courseMatches(courseSearchString, c))
       .sort(courseScoreComparator)
       .take(15)
       .value();
   }
 
   render() {
-    const { courses, searchText, spinning } = this.state;
+    const { courseSearchString } = this.props;
+    const { courses, spinning, searchFieldString } = this.state;
     const courseComponents = _.map(this.getFilteredCourses(), course => {
       return (
-        <Item>
+        <Item key={course.title}>
           <Item.Content>
             <Item.Image floated="right">
               <Score scoreValue={course.score} />
@@ -115,8 +139,12 @@ class Browse extends Component {
           icon="search"
           placeholder="find courses/professors/friends"
           fluid
-          onChange={e => this.searchHandler(e.target.value)}
+          onChange={e => {
+            this.setState({ searchFieldString: e.target.value });
+            this.searchHandler(e.target.value);
+          }}
           loading={spinning}
+          value={searchFieldString}
         />
         <Grid style={{ marginTop: '1em' }}>
           <Grid.Row>
@@ -160,4 +188,4 @@ class Browse extends Component {
   }
 }
 
-export default Browse;
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);

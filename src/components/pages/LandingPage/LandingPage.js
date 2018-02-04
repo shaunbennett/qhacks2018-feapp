@@ -30,7 +30,7 @@ class LandingPage extends Component {
             value={this.state.input}
           />
           <div class={styles.links}>
-            <Link to="/">Explore Courses</Link>
+            <Link to="/courses">Explore Courses</Link>
             <Link to="/">Job Opportunities</Link>
           </div>
         </div>

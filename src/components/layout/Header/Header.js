@@ -15,7 +15,9 @@ class Header extends Component {
     };
   }
   toggleModal = e => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     this.setState({
       visible: !this.state.visible
     });
