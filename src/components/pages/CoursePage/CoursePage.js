@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './CoursePage.scss';
 import ProgressBar from '../../util/ProgressBar/ProgressBar';
 import Rating from '../../util/Rating/Rating';
+import { connect } from 'react-redux';
 
 const DEFAULT_PROPS = {
   code: 'CISC101',
@@ -12,7 +13,12 @@ const DEFAULT_PROPS = {
 };
 class CoursePage extends Component {
   render() {
-    const { code, title, description, units } = DEFAULT_PROPS;
+    const { match: { params }, courses } = this.props;
+    console.log('COURSES', courses);
+    const matched_code = params.course;
+    const { code, title, description, units } = courses.courses[matched_code];
+
+    console.log('PARAMS', params, courses);
     return (
       <div className={styles.wrapper}>
         <div className={styles.info}>
@@ -43,4 +49,10 @@ class CoursePage extends Component {
   }
 }
 
-export default CoursePage;
+function mapStateToProps(state) {
+  return {
+    courses: state.info.courses
+  };
+}
+
+export default connect(mapStateToProps)(CoursePage);

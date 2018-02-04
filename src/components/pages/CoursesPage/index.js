@@ -14,9 +14,10 @@ import {
   Loader,
   Segment
 } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { searchCourse } from '../../../actions/courseActions';
+import { searchCourse, getCourseData } from '../../../actions/courseActions';
 
 function getRandomInt(min, max) {
   return Math.floor(min + Math.random() * Math.floor(max - min));
@@ -125,7 +126,9 @@ class CoursesPage extends Component {
             <Item.Image floated="right">
               <Score scoreValue={course.score} />
             </Item.Image>
-            <Item.Header as="a">{course.code}</Item.Header>
+            <Item.Header>
+              <Link to={'/courses/' + course.code}>{course.code}</Link>
+            </Item.Header>
             <Item.Meta>{course.title}</Item.Meta>
           </Item.Content>
         </Item>
