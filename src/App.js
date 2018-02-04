@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import { Router, Route, Link } from 'react-router-dom';
-
-import SignupForm from './auth/SignupForm';
-import LoginForm from './auth/LoginForm';
-import Browse from './Browse';
-
-import './App.css';
-import 'semantic-ui-css/semantic.min.css';
+import styles from './App.scss';
 
 class App extends Component {
   render() {
-    return <div>{this.props.children}</div>;
+    return <div className={styles.wrapper}>{this.props.children}</div>;
   }
 }
 
