@@ -3,21 +3,18 @@ import * as _ from 'lodash';
 import { firebase } from '../../../firebase/firebase';
 import {
   Container,
-  List,
   Statistic,
   Header,
   Item,
   Input,
   Menu,
   Grid,
-  Dimmer,
-  Loader,
   Segment
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { searchCourse } from '../../../actions/courseActions';
+import { searchCourse, getCourseData } from '../../../actions/courseActions';
 
 function getRandomInt(min, max) {
   return Math.floor(min + Math.random() * Math.floor(max - min));
@@ -118,25 +115,21 @@ class CoursesPage extends Component {
       .filter(c => c.title !== '') // remove courses with empty titles
       .filter(c => courseMatches(courseSearchString, c))
       .sort(courseScoreComparator)
-      .take(15)
+      .take(10)
       .value();
   }
 
   render() {
     const { courseSearchString } = this.props;
     const { courses, spinning, searchFieldString } = this.state;
-    const courseComponents = _.map(this.getFilteredCourses(), course => {
+    let courseComponents = _.map(this.getFilteredCourses(), course => {
       return (
         <Item key={course.title}>
           <Item.Content>
             <Item.Image floated="right">
               <Score scoreValue={course.score} />
             </Item.Image>
-            <Item.Header
-              as={Link}
-              // it's ugly, but it works for now
-              to={`/courses/${course.code.replace(' ', '')}`}
-            >
+            <Item.Header as={Link} to={`/courses/${course.code}`}>
               {course.code}
             </Item.Header>
             <Item.Meta>{course.title}</Item.Meta>
@@ -145,67 +138,91 @@ class CoursesPage extends Component {
       );
     });
 
+    if (courseComponents.length == 0) {
+      courseComponents = (
+        <Header style={{ marginLeft: '8em' }}>No Courses Found</Header>
+      );
+    }
+
+    const backgroundStyle = {
+      zIndex: -1000,
+      width: '100%',
+      height: '100%',
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px',
+      position: 'fixed'
+    };
+
     return (
-      <Container text className="courses">
-        <Input
-          size="big"
-          icon="search"
-          placeholder="find courses/professors/friends"
-          fluid
-          ref={input => {
-            this.searchInput = input;
-          }}
-          onChange={e => {
-            this.setState({ searchFieldString: e.target.value });
-            this.searchHandler(e.target.value);
-          }}
-          loading={spinning}
-          value={searchFieldString}
-          // this is hacky as shit, but basically it makes it so when the input field is focused,
-          // the cursor will be at the end of the text instead of the start
-          onFocus={e => {
-            var val = e.target.value;
-            e.target.value = '';
-            e.target.value = val;
-          }}
-        />
-        <Grid style={{ marginTop: '1em' }}>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Menu secondary text vertical>
-                <Menu.Item header>Sort By</Menu.Item>
-                <Menu.Item
-                  name="mostPopular"
-                  // active={activeItem === 'closest'}
-                  // onClick={this.handleItemClick}
-                />
-                <Menu.Item
-                  name="tough"
-                  // active={activeItem === 'mostComments'}
-                  // onClick={this.handleItemClick}
-                />
-                <Menu.Item
-                  name="easy"
-                  // active={activeItem === 'mostComments'}
-                  // onClick={this.handleItemClick}
-                />
-                <Menu.Item
-                  name="recommended"
-                  // active={activeItem === 'mostPopular'}
-                  // onClick={this.handleItemClick}
-                />
-              </Menu>
-            </Grid.Column>
-            <Grid.Column width={13}>
-              {/* <Segment> */}
-              {/* <Dimmer inverted active={spinning}> */}
-              {/* <Loader /> */}
-              {/* </Dimmer> */}
-              <Item.Group divided>{courseComponents}</Item.Group>
-              {/* </Segment> */}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+      <Container style={{ marginTop: '4em' }} text className="courses">
+        <Segment>
+          <img
+            src="/img/landing_page_bg.svg"
+            alt="background"
+            style={backgroundStyle}
+          />
+          <Input
+            size="big"
+            icon="search"
+            placeholder="find courses/professors/friends"
+            fluid
+            ref={input => {
+              this.searchInput = input;
+            }}
+            onChange={e => {
+              this.setState({ searchFieldString: e.target.value });
+              this.searchHandler(e.target.value);
+            }}
+            loading={spinning}
+            value={searchFieldString}
+            // this is hacky as shit, but basically it makes it so when the input field is focused,
+            // the cursor will be at the end of the text instead of the start
+            onFocus={e => {
+              var val = e.target.value;
+              e.target.value = '';
+              e.target.value = val;
+            }}
+          />
+          <Grid style={{ marginTop: '1em' }}>
+            <Grid.Row>
+              <Grid.Column width={3}>
+                <Menu secondary text vertical>
+                  <Menu.Item header>Sort By</Menu.Item>
+                  <Menu.Item
+                    name="mostPopular"
+                    // active={activeItem === 'closest'}
+                    // onClick={this.handleItemClick}
+                  />
+                  <Menu.Item
+                    name="tough"
+                    // active={activeItem === 'mostComments'}
+                    // onClick={this.handleItemClick}
+                  />
+                  <Menu.Item
+                    name="easy"
+                    // active={activeItem === 'mostComments'}
+                    // onClick={this.handleItemClick}
+                  />
+                  <Menu.Item
+                    name="recommended"
+                    // active={activeItem === 'mostPopular'}
+                    // onClick={this.handleItemClick}
+                  />
+                </Menu>
+              </Grid.Column>
+              <Grid.Column width={13}>
+                {/* <Segment> */}
+                {/* <Dimmer inverted active={spinning}> */}
+                {/* <Loader /> */}
+                {/* </Dimmer> */}
+                <Item.Group divided>{courseComponents}</Item.Group>
+                {/* </Segment> */}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
       </Container>
     );
   }

@@ -1,7 +1,6 @@
-'use strict';
 const courses = require('./courses');
 export const initialState = {
-  courses
+  courses: courses.courses
 };
 
 export function infoReducer(state = initialState, action) {

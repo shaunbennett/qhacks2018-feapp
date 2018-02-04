@@ -5,6 +5,7 @@ import SearchBar from '../../layout/SearchBar/SearchBar';
 import { browserHistory, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { searchCourseFromLanding } from '../../../actions/courseActions';
+import { Image } from 'semantic-ui-react';
 class LandingPage extends Component {
   constructor(props) {
     super(props);
@@ -29,11 +30,18 @@ class LandingPage extends Component {
           className={styles.img}
         />
         <div className={styles.formWrapper}>
+          <Image
+            centered
+            src="/img/logo.png"
+            width="70%"
+            height="70%"
+            alt="logo"
+          />
           <SearchBar
             onChange={e => this.handleChange(e)}
             value={this.state.input}
           />
-          <div class={styles.links}>
+          <div className={styles.links}>
             <Link to="/courses">Explore Courses</Link>
             <Link to="/">Job Opportunities</Link>
           </div>

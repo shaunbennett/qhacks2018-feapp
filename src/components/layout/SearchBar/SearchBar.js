@@ -1,25 +1,26 @@
 import React from 'react';
 import styles from './SearchBar.scss';
 import className from 'classnames';
+import { Search, Input } from 'semantic-ui-react';
 
 const SearchBar = ({ value, onChange }) => {
   const wrapperClasses = className('input-group', styles.wrapper);
   const addonClasses = className('input-group-text', styles.addon);
   return (
     <div className={wrapperClasses}>
-      <div className="input-group-addon">
-        <span className={addonClasses}>
-          <i className="fa fa-search" />
-        </span>
-      </div>
-      <input
+      <Input
+        icon="search"
         onChange={onChange}
         value={value}
-        type="text"
-        className="form-control"
-        placeholder="Search courses/profs"
-        aria-label="Search"
+        placeholder="search courses/profs..."
+        fluid
       />
+      {/* <Search
+        onSearchChange={onChange}
+        value={value}
+        placeholder="search courses/profs..."
+        fluid
+      /> */}
     </div>
   );
 };

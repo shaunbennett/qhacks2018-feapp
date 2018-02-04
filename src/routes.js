@@ -37,8 +37,8 @@ const routes = (
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/course" component={CoursePage} />
+      <Route path="/courses/:course" component={CoursePage} />
       <Route path="/courses" component={CoursesPage} />
-      <Route path="/courses/:course" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   </App>

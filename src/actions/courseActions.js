@@ -11,3 +11,7 @@ export function searchCourse(courseSearchString) {
 export function searchCourseFromLanding(courseSearchString) {
   return { type: SEARCH_COURSE_LANDING_PAGE, courseSearchString };
 }
+
+export function getCourseData(data) {
+  return { type: 'GET_COURSE_DATA', payload: data };
+}
