@@ -7,6 +7,7 @@ import App from './App';
 import LandingPage from './components/pages/LandingPage/LandingPage';
 import Header from './components/layout/Header/Header';
 import LoginPage from './components/pages/LoginPage/LoginPage';
+import CoursePage from './components/pages/CoursePage/CoursePage';
 
 const Status = function({ code, children }) {
   return (
@@ -36,6 +37,7 @@ const routes = (
     <Switch>
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/course" component={CoursePage} />
       <Route component={NotFound} />
     </Switch>
   </App>
