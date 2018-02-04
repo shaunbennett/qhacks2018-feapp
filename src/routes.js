@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import App from './App';
 import LandingPage from './components/pages/LandingPage/LandingPage';
 import Header from './components/layout/Header/Header';
+import LoginPage from './components/pages/LoginPage/LoginPage';
 
 const Status = function({ code, children }) {
   return (
@@ -34,6 +35,7 @@ const routes = (
     <Header />
     <Switch>
       <Route exact path="/" component={LandingPage} />
+      <Route path="/login" component={LoginPage} />
       <Route component={NotFound} />
     </Switch>
   </App>

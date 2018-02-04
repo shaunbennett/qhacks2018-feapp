@@ -7,7 +7,7 @@ const SearchBar = ({ value, onChange }) => {
   const addonClasses = className('input-group-text', styles.addon);
   return (
     <div className={wrapperClasses}>
-      <div className="input-group-prepend">
+      <div className="input-group-addon">
         <span className={addonClasses}>
           <i className="fa fa-search" />
         </span>
