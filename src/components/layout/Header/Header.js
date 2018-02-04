@@ -13,6 +13,13 @@ import { withRouter } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 import styles from './Header.scss';
-const Header = () => <div />;
+
+const Header = () => {
+  return (
+    <div className={styles.wrapper}>
+      <Link to="/login">Sign In</Link>
+    </div>
+  );
+};
 
 export default withRouter(Header);
