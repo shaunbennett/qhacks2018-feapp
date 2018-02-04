@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import styles from './LandingPage.scss';
 import bg_img from './landing_page_bg.svg';
 import SearchBar from '../../layout/SearchBar/SearchBar';
-import { Link } from 'react-router-dom';
+import { browserHistory, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { searchCourseFromLanding } from '../../../actions/courseActions';
 class LandingPage extends Component {
   constructor(props) {
     super(props);
@@ -11,9 +13,11 @@ class LandingPage extends Component {
     };
   }
   handleChange = e => {
-    this.setState({
-      input: e.target.value
-    });
+    this.props.history.push('/courses');
+    this.props.doSearch(e.target.value);
+    // this.setState({
+    // input: e.target.value
+    // });
   };
 
   render() {
@@ -39,4 +43,18 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    doSearch: text => {
+      dispatch(searchCourseFromLanding(text));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

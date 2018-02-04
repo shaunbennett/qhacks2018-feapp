@@ -14,6 +14,7 @@ import {
   Loader,
   Segment
 } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { searchCourse } from '../../../actions/courseActions';
@@ -52,7 +53,8 @@ function courseScoreComparator(courseA, courseB) {
 
 const mapStateToProps = state => {
   return {
-    courseSearchString: state.course.courseSearchString
+    courseSearchString: state.course.courseSearchString,
+    forceInputField: state.course.forceInputField
   };
 };
 
@@ -90,6 +92,11 @@ class CoursesPage extends Component {
 
         this.setState({ courses, spinning: false });
       });
+
+    if (this.props.forceInputField) {
+      console.log('FORCING FOCUS');
+      this.searchInput.focus();
+    }
   }
 
   createSpinningDebouncer(func, wait) {
@@ -125,7 +132,13 @@ class CoursesPage extends Component {
             <Item.Image floated="right">
               <Score scoreValue={course.score} />
             </Item.Image>
-            <Item.Header as="a">{course.code}</Item.Header>
+            <Item.Header
+              as={Link}
+              // it's ugly, but it works for now
+              to={`/courses/${course.code.replace(' ', '')}`}
+            >
+              {course.code}
+            </Item.Header>
             <Item.Meta>{course.title}</Item.Meta>
           </Item.Content>
         </Item>
@@ -139,12 +152,22 @@ class CoursesPage extends Component {
           icon="search"
           placeholder="find courses/professors/friends"
           fluid
+          ref={input => {
+            this.searchInput = input;
+          }}
           onChange={e => {
             this.setState({ searchFieldString: e.target.value });
             this.searchHandler(e.target.value);
           }}
           loading={spinning}
           value={searchFieldString}
+          // this is hacky as shit, but basically it makes it so when the input field is focused,
+          // the cursor will be at the end of the text instead of the start
+          onFocus={e => {
+            var val = e.target.value;
+            e.target.value = '';
+            e.target.value = val;
+          }}
         />
         <Grid style={{ marginTop: '1em' }}>
           <Grid.Row>
